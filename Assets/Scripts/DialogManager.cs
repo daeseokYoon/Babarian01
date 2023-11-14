@@ -40,6 +40,11 @@ public class DialogManager : MonoBehaviour // 이거 Interaction 이랑 promptedUI �
         StartCoroutine(ShowDialog(dialog));
     }
 
+    public void AddResponseEvents(ResponseEvent[] responseEvents)
+    {
+        responseHandler.AddResponseEvents(responseEvents);
+    }
+
 
     // 아래 타이핑 효과만 따로 뽑아서 스크립트로 만들기
     IEnumerator ShowDialog(DialogueSO dialog) // 아무리 생각해도 매니저에 둘 건 아니고 다이어로그 UI를 다루는 스크립트를 따로 만들어서 거기서 실행되게끔 해야할 것 같다 // 지금은 프롬프트에 지정한 대화목록만 불러온 형태이다.

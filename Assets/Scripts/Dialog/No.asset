@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b411a578ade56564cbe182a34067b569, type: 3}
   m_Name: No
   m_EditorClassIdentifier: 
-  dialogue: []
+  dialogue:
+  - "\uC544\uB140\uD588\uC2B5\uB2C8\uB2E4."
+  responses: []

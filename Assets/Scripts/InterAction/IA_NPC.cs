@@ -9,6 +9,11 @@ public class IA_NPC : MonoBehaviour, IInteractable
 
     [SerializeField] DialogueSO dialog; // 개별 오브젝트에 저장된 서로 다른 로그 / 만약 바꾼다면 여기만 SO모델로 스크립트를 바꿔주면 될듯. 그리고 ShowDialog 함수 파라미터 바꿔주기
 
+    public void UpdateDialogueSO(DialogueSO dialog)
+    {
+        this.dialog = dialog;
+    }
+
     public bool Interact(ObjectInteractor interactor)
     {
         Interact_Dialog(dialog);
@@ -29,6 +34,18 @@ public class IA_NPC : MonoBehaviour, IInteractable
     public void Interact_Dialog(DialogueSO log)
     {
         dialog = log;
+
+        foreach(DialogResponseEvents responseEv in GetComponents<DialogResponseEvents>())
+        {
+            DialogManager.instance.AddResponseEvents(responseEv.Events);
+            break;
+        }
+
         DialogManager.instance.ShowDialogue(dialog);
+
+        //if (TryGetComponent(out DialogResponseEvents responseEvents) && responseEvents.DialogueSO == dialog) // 대화 상자 일치여부 확인 
+        //{
+        //    DialogManager.instance.AddResponseEvents(responseEvents.Events);
+        //}
     }
 }

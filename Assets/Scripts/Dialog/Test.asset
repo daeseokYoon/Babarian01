@@ -12,4 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b411a578ade56564cbe182a34067b569, type: 3}
   m_Name: Test
   m_EditorClassIdentifier: 
-  dialogue: []
+  dialogue:
+  - "\r\uC9C8\uBCD1\uC740 \uC785\uC744 \uCAD3\uC544 \uB4E4\uC5B4\uAC00\uACE0 \uD654\uADFC\uC740
+    \uC785\uC744 \uC887\uC544 \uB098\uC628\uB2E4\r\n\uD589\uBCF5\uC774\uB780 \uD0C0\uC778\uC744
+    \uD589\uBCF5\uD558\uAC8C \uD574\uC8FC\uB824\uB294 \uB178\uB825\uC758 \uBD80\uC0B0\uBB3C\uC774\uB2E4.\r\n\uC9C0\uD61C\uB294
+    \uB4E3\uB294 \uB370\uC11C \uC624\uACE0 \uD6C4\uD68C\uB294 \uB9D0\uD558\uB294
+    \uB370\uC11C \uC628\uB2E4.\r\n\uC778\uAC04\uC740 \uC758\uC695\uD558\uB294 \uAC83,
+    \uADF8\uB9AC\uACE0 \uCC3D\uC870\uD558\uB294 \uAC83\uC5D0 \uC758\uD574\uC11C\uB9CC\uC774
+    \uD589\uBCF5\uD558\uB2E4.\r\r"
+  - "\uADF8\uB807\uB2E4\uACE0 \uD55C\uB2E4."
+  responses:
+  - responseText: "1. \uC548\uB155\uD55C\uB2E4."
+    dialogueSO: {fileID: 11400000, guid: ef0563e5a94e5bc4591a9d7f268f8d4f, type: 2}
+  - responseText: "2. \uB124\uD55C\uB2E4."
+    dialogueSO: {fileID: 11400000, guid: 453bcfcf6ac441c4cb7c78b7ad7e2af0, type: 2}

@@ -37,7 +37,7 @@ public class ObjectInteractor : MonoBehaviour // 약간 컨트롤러 느낌 + 다이어로그
             {
                 if (!_interactionPromptUI.IsDisplayed) _interactionPromptUI.SetUp(_interactable.InteractionPrompt);
 
-                if (Input.GetKeyDown(KeyCode.E) && DialogManager.instance.IsDialogActive() == false)
+                if (Input.GetKeyDown(KeyCode.E) && DialogManager.instance.IsDialogActive() == false)  // 현재 움직이면서 E버튼을 연타시 중복해서 다이어로그가 나오면서 리스폰스가 중복해서 나오는 버그 있음
                 {
                     _interactable.Interact(this); // 플레이어가 가진 이 스크립트를 상호작용할 오브젝트의 interact에 넣어서 원하는 코드를 실행
                 }
