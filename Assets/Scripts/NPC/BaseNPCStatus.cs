@@ -21,5 +21,11 @@ public class BaseNPCStatus
     public float baseHP;
     public float curHP;
 
+    public float baseAtk;
+    public float curAtk;
+
+    public float baseDef;
+    public float curDef;
+
 
 }
