@@ -10,14 +10,14 @@ using UnityEngine.Rendering;
 using UnityEditor.Animations;
 using UnityEditor;
 
-public class DialogManager : MonoBehaviour // 이거 Interaction 이랑 promptedUI 연구하고 참고해서 반대로 npc에 저장된 dialogprompt를 받아서 dialogtext에 출력되게 만들어야한다. 
-                                           // 지금 형태는 참고해서 받는게 아닌 그대로 저장된 내용 // Que 데이터 구조 이용해서 다이어로그 작성배우기
-                                           // 다이어로그를 매니저로 만들어야하는가? 타이핑효과는 컨트롤러역할을 하는 스크립트에 작성해주면 되는데? 
-                                           // 매니저 형태라기보다 페이지와 컨트롤러가 합쳐진 모양의 스크립트... Update가 없고 ObjectInteractor에서 Update를 맡았다.
+public class DialogManager : MonoBehaviour                                                  // 이거 Interaction 이랑 promptedUI 연구하고 참고해서 반대로 npc에 저장된 dialogprompt를 받아서 dialogtext에 출력되게 만들어야한다. 
+                                                                                            // 지금 형태는 참고해서 받는게 아닌 그대로 저장된 내용 // Que 데이터 구조 이용해서 다이어로그 작성배우기
+                                                                                            // 다이어로그를 매니저로 만들어야하는가? 타이핑효과는 컨트롤러역할을 하는 스크립트에 작성해주면 되는데? 
+                                                                                            // 매니저 형태라기보다 페이지와 컨트롤러가 합쳐진 모양의 스크립트... Update가 없고 ObjectInteractor에서 Update를 맡았다.
 {
     [SerializeField] GameObject dialogBox;
     [SerializeField] TextMeshProUGUI dialogText;
-    [SerializeField] RectTransform reponseOptionPos; // UI에 위치해 있어서 transform 대신에 rect라고 씀 근데 transform으로 쓴 메소드에서 오류가 나지 않는다. 왜징?
+    [SerializeField] RectTransform reponseOptionPos;                                                                // UI에 위치해 있어서 transform 대신에 rect라고 씀 근데 transform으로 쓴 메소드에서 오류가 나지 않는다. 왜징?
     [SerializeField] GameObject reponseBox;
 
     [SerializeField] ResponseHandler responseHandler;
@@ -40,14 +40,15 @@ public class DialogManager : MonoBehaviour // 이거 Interaction 이랑 promptedUI �
         StartCoroutine(ShowDialog(dialog));
     }
 
-    public void AddResponseEvents(ResponseEvent[] responseEvents)
+    public void AddResponseEvents(ResponseEvent[] responseEvents) // 다른 객체에 어떤 동작을 위임하는 것으로 코드의 가독성과 유지보수성을 향상시킬 수 있는 방법이다. (모듈화, 재사용성, 단일책임원칙, 유지보수성)
     {
         responseHandler.AddResponseEvents(responseEvents);
     }
 
 
     // 아래 타이핑 효과만 따로 뽑아서 스크립트로 만들기
-    IEnumerator ShowDialog(DialogueSO dialog) // 아무리 생각해도 매니저에 둘 건 아니고 다이어로그 UI를 다루는 스크립트를 따로 만들어서 거기서 실행되게끔 해야할 것 같다 // 지금은 프롬프트에 지정한 대화목록만 불러온 형태이다.
+    IEnumerator ShowDialog(DialogueSO dialog)                                                                        // 아무리 생각해도 매니저에 둘 건 아니고 다이어로그 UI를 다루는 스크립트를 따로 만들어서 거기서 실행되게끔 해야할 것 같다 
+                                                                                                                     // 지금은 프롬프트에 지정한 대화목록만 불러온 형태이다.
     {
         for (int i = 0; i < dialog.Dialogue.Length; i++)
         {

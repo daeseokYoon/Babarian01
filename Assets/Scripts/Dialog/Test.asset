@@ -22,7 +22,9 @@ MonoBehaviour:
     \uD589\uBCF5\uD558\uB2E4.\r\r"
   - "\uADF8\uB807\uB2E4\uACE0 \uD55C\uB2E4."
   responses:
-  - responseText: "1. \uC548\uB155\uD55C\uB2E4."
+  - responseText: "1. \uCE74\uBA54\uB77C \uC804\uD658"
     dialogueSO: {fileID: 11400000, guid: ef0563e5a94e5bc4591a9d7f268f8d4f, type: 2}
-  - responseText: "2. \uB124\uD55C\uB2E4."
+  - responseText: "2. \uB300\uD654 \uC911\uC9C0"
     dialogueSO: {fileID: 11400000, guid: 453bcfcf6ac441c4cb7c78b7ad7e2af0, type: 2}
+  - responseText: "3. \uC131\uACA9Test"
+    dialogueSO: {fileID: 11400000, guid: cec3e99f36c30ba4882fd805a08f226d, type: 2}

@@ -31,7 +31,7 @@ public class ResponseHandler : MonoBehaviour
     public void ShowResponse(Response[] responses)
     {
         responsePivot.gameObject.SetActive(true);
-        ResetBoxSize();
+        //ResetBoxSize();
         float responseBoxHeight = 0;
 
         for (int i = 0; i < responses.Length; i++)

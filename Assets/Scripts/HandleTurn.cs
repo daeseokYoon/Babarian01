@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HandleTurn : MonoBehaviour
+public class HandleTurn
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string Attacker; // 공격자 이름
+    public GameObject AttacksGameObject; // 공격하는 애
+    public GameObject AttackersTarget; // 공격받는 애
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
 }
