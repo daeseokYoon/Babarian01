@@ -100,8 +100,6 @@ public class DialogManager : MonoBehaviour                                      
 
     void ResetResponseBox(Transform parent)
     {
-
-
         Transform[] children = new Transform[parent.childCount];
         for (int i = 0; i < parent.childCount; i++)
         {

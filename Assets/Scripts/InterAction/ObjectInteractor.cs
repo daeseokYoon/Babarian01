@@ -49,6 +49,8 @@ public class ObjectInteractor : MonoBehaviour // 약간 컨트롤러 느낌 + 다이어로그
             if (_interactable != null) _interactable = null;
             if (_interactionPromptUI.IsDisplayed) _interactionPromptUI.Close();
             if (DialogManager.instance.IsDialogActive() == true) DialogManager.instance.CloseDialogBox();
+            CameraManager.Instance.SetCameraPriority(0);
+            CameraManager.Instance.InvisiblePlayer(true);
         }
     }
     private void OnDrawGizmos()

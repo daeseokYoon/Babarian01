@@ -8,23 +8,23 @@ using UnityEngine.EventSystems;
 
 public class FreeLookCamera : MonoBehaviour
 {
-    CinemachineVirtualCamera MainVcam;
+    //CinemachineVirtualCamera MainVcam;
 
     CinemachineFreeLook freeLook;
     public float scrollSpeed = 500f;
     
-    float MaxFOV;
+    //float MaxFOV;
     public Transform LookAtme;
     float sensitivity = 200f; // rotspeed
-    float xRotate, yRotate, xRotateMove, yRotateMove; 
-    Vector3 originalRotationPos;
-    Vector3 lastRoationPos;
+    //float xRotate, yRotate, xRotateMove, yRotateMove; 
+    //Vector3 originalRotationPos;
+    //Vector3 lastRoationPos;
 
-    float rotationX;
+    //float rotationX;
 
     //public float rotationY;
-    bool isRotating = false;
-    bool isFighting = false;
+    //bool isRotating = false;
+    //bool isFighting = false;
 
     private void Awake()
     {
@@ -42,6 +42,10 @@ public class FreeLookCamera : MonoBehaviour
             freeLook.m_Orbits[i].m_Radius += scrollWheel;
             freeLook.m_Orbits[i].m_Radius = Mathf.Clamp(freeLook.m_Orbits[i].m_Radius, minRadius[i], maxRadius[i]);
         }
+
+        if (Input.GetMouseButton(1))
+            return UnityEngine.Input.GetAxis(axis) * sensitivity * Time.deltaTime;
+        return 0;
 
         //float scrollWheel = Input.GetAxis("Mouse ScrollWheel");
 
@@ -62,10 +66,6 @@ public class FreeLookCamera : MonoBehaviour
         //freeLook.m_Lens.FieldOfView += scrollWheel * scrollSpeed * Time.deltaTime;
         //// 줌 인 아웃 할때 fov로 하지말고 z값이 앞뒤로 가게끔 수정예정
         //freeLook.m_Lens.FieldOfView = Mathf.Clamp(freeLook.m_Lens.FieldOfView, 6.7f, 140f);
-
-        if (Input.GetMouseButton(1))
-            return UnityEngine.Input.GetAxis(axis) * sensitivity *Time.deltaTime;
-        return 0;
     }
 
     void Start()
