@@ -36,7 +36,7 @@ namespace Inventory.UI
             itemDescription.ResetDescription();
         }
 
-        public void InitializeInventoryUI(int inventorysize)
+        public void InitializeInventoryUI(int inventorysize)                                        // 지정한 인벤 크기만큼 인스턴트 생성
         {
             for (int i = 0; i < inventorysize; i++)
             {

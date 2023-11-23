@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2256406872718019876}
   - component: {fileID: 8020619689391183534}
   - component: {fileID: 3479863983652096068}
+  - component: {fileID: 2343647730811371501}
   m_Layer: 5
   m_Name: ResultTextBox
   m_TagString: Untagged
@@ -77,6 +78,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2343647730811371501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2214431622543975866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8852a636ecfea324ca2702e0fa85e12a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalResults: {fileID: 6128114200238451579}
 --- !u!1 &6051826829469712233
 GameObject:
   m_ObjectHideFlags: 0

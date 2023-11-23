@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - "\uC131\uACA9\uD14C\uC2A4\uD2B8 \uC911..."
-  responses: []
+  responses:
+  - responseText: 
+    dialogueSO: {fileID: 0}
