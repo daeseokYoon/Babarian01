@@ -10,6 +10,7 @@ public class ResultPage : MonoBehaviour
     [SerializeField] Text resultText;
 
     List<ResultTextBox> results = new List<ResultTextBox>();
+    
     Dictionary<string, string> dict = new Dictionary<string, string>(); // 고정으로 사용예정 추가없음
     public void Dict()
     {
@@ -31,31 +32,48 @@ public class ResultPage : MonoBehaviour
         int maxIndex = -1;
         //int? maxValue = null; // 아닛? HasValue, Value가 숨어있네 // MinValue를 이해 못해서 바꿔쓴거였음 지워도 무관
         string dictValue = "";
+
+        List<string> traitNames = GameManager.Instance.EachKeyName();
+
         for (int i = 0; i < 4; i++)
         {
             ResultTextBox resultTextBox = Instantiate(boxPrefab, Vector3.zero, Quaternion.identity);
             resultTextBox.transform.SetParent(listPanel);
             results.Add(resultTextBox);
-
-
-            int value = GameManager.Instance.EachTotalValue(i);          
-            string traitName = GameManager.Instance.PlayerTrait()[i].traitName[i];
-            resultTextBox.SetResultText(traitName, value);
-
-            if(value > maxValue) // for문 한번씩 돌아가는 값 하나하나씩 넣어가면서 확인하기 때문!
+                       
+            if (i < traitNames.Count)
             {
-                maxValue = value; 
-                maxIndex = i; // 최대값이 걸린 value와 맞춘 i
+                string traitName = traitNames[i];
+                int value = GameManager.Instance.EachTotalValue(traitName);
+                resultTextBox.SetResultText(traitName, value);
+                if (value > maxValue) // for문 한번씩 돌아가는 값 하나하나씩 넣어가면서 확인하기 때문!
+                {
+                    maxValue = value;
+                    maxIndex = i; // 최대값이 걸린 value와 맞춘 i
+                }
+                else 
+                {
+                    Debug.Log("얼마나 들어왔냐?" + i);
+                }
             }
-
+            //string traitName = GameManager.Instance.PlayerTrait().[i].traitName[i];            
             if (maxIndex != -1)
             {
-                string maxTraitName = GameManager.Instance.PlayerTrait()[maxIndex].traitName[maxIndex];
-
-                if (dict.ContainsKey(maxTraitName))
+                List<string> maxTraitNames = GameManager.Instance.EachKeyName();
+                if(maxIndex < maxTraitNames.Count)
                 {
-                    dictValue = dict[maxTraitName];
+                    string maxTraitName = maxTraitNames[maxIndex];
+
+                    if (dict.ContainsKey(maxTraitName))
+                    {
+                        dictValue = dict[maxTraitName];
+                    }
                 }
+                else
+                {
+                    Debug.Log("최대 인덱스는? " +  maxIndex);
+                }
+                
             }
         }
         
